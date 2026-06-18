@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Bimtek BTS</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <!-- Konfigurasi Warna Kustom agar sesuai gambar -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        btsblue: '#1e3a5f',
+                        btshover: '#294a7a',
+                        btsyellow: '#eab308',
+                        bglight: '#f4f7f6'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Impor font mirip Google Font */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    </style>
+</head>
+<body class="bg-bglight text-gray-800 font-sans h-screen flex overflow-hidden">
+
+    <!-- SIDEBAR KIRI -->
+    <aside class="w-64 bg-btsblue text-white flex flex-col shadow-lg z-10">
+        <!-- Logo -->
+        <div class="p-6 flex items-center gap-3 border-b border-white/10">
+            <div class="bg-btsyellow text-btsblue font-bold text-sm w-11 h-11 rounded-lg flex items-center justify-center shadow-sm">
+                BTS
+            </div>
+            <div class="leading-tight">
+                <h1 class="font-bold text-[13px] tracking-wide">Balai Teknik Sanitasi</h1>
+                <p class="text-[11px] text-gray-300 mt-0.5">Kemen. PU - Ditjen CK</p>
+            </div>
+        </div>
+
+        <!-- Menu Navigasi -->
+        <nav class="flex-1 py-6 space-y-6 overflow-y-auto custom-scrollbar">
+            
+            <!-- Kategori Beranda -->
+            <div>
+                <p class="px-6 text-[10px] font-bold text-gray-400 mb-2 tracking-wider">BERANDA</p>
+                <a href="#" class="flex items-center gap-3 px-6 py-3 bg-btshover border-l-4 border-btsyellow text-white">
+                    <i class="fas fa-th-large w-5 text-center"></i>
+                    <span class="font-semibold text-sm">Dashboard</span>
+                </a>
+            </div>
+
+            <!-- Kategori Manajemen -->
+            <div>
+                <p class="px-6 text-[10px] font-bold text-gray-400 mb-2 tracking-wider">MANAJEMEN</p>
+                <a href="#" class="flex items-center gap-3 px-6 py-2.5 hover:bg-btshover text-gray-300 hover:text-white transition-colors">
+                    <i class="fas fa-user-friends w-5 text-center"></i>
+                    <span class="text-sm font-medium">Data Peserta</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 px-6 py-2.5 hover:bg-btshover text-gray-300 hover:text-white transition-colors">
+                    <i class="fas fa-filter w-5 text-center"></i>
+                    <span class="text-sm font-medium">Seleksi & Verifikasi</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 px-6 py-2.5 hover:bg-btshover text-gray-300 hover:text-white transition-colors">
+                    <i class="fas fa-chart-bar w-5 text-center"></i>
+                    <span class="text-sm font-medium">Penilaian & Ranking</span>
+                </a>
+            </div>
+
+            <!-- Kategori Dokumen -->
+            <div>
+                <p class="px-6 text-[10px] font-bold text-gray-400 mb-2 tracking-wider">DOKUMEN</p>
+                <a href="#" class="flex items-center gap-3 px-6 py-2.5 hover:bg-btshover text-gray-300 hover:text-white transition-colors">
+                    <i class="fas fa-file-signature w-5 text-center"></i>
+                    <span class="text-sm font-medium">Generate Dokumen</span>
+                </a>
+                <a href="#" class="flex items-center gap-3 px-6 py-2.5 hover:bg-btshover text-gray-300 hover:text-white transition-colors">
+                    <i class="fas fa-database w-5 text-center"></i>
+                    <span class="text-sm font-medium">Database Riwayat</span>
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- KONTEN UTAMA KANAN -->
+    <main class="flex-1 p-8 overflow-y-auto">
+        <!-- Judul Halaman -->
+        <header class="mb-8">
+            <h2 class="text-[26px] font-semibold text-btsblue mb-1">Dashboard Bimtek</h2>
+            <p class="text-gray-500 text-sm">Perencanaan Teknis Rinci SPALD Setempat • 4–11 Juni 2026</p>
+        </header>
+
+        <!-- 4 Kotak Ringkasan (Cards) -->
+        <div class="grid grid-cols-4 gap-5 mb-6">
+            
+            <!-- Card 1 -->
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between h-36">
+                <p class="text-[11px] text-gray-500 font-semibold tracking-wide uppercase">Total Peserta</p>
+                <div class="mt-auto">
+                    <h3 class="text-4xl text-btsblue font-semibold mb-1">24</h3>
+                    <p class="text-xs text-gray-400">dari 24 kuota</p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between h-36">
+                <p class="text-[11px] text-gray-500 font-semibold tracking-wide uppercase">Sudah Nilai</p>
+                <div class="mt-auto">
+                    <h3 class="text-4xl text-btsyellow font-semibold mb-1">0</h3>
+                    <div class="w-full bg-gray-100 h-1.5 rounded-full mt-2">
+                        <div class="bg-btsyellow h-1.5 rounded-full" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between h-36">
+                <p class="text-[11px] text-gray-500 font-semibold tracking-wide uppercase">Lulus</p>
+                <div class="mt-auto">
+                    <div class="w-6 h-1 bg-green-600 rounded-full mb-3"></div>
+                    <p class="text-xs text-gray-400 leading-snug">belum ada<br>nilai masuk</p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white p-5 rounded-2xl shadow-sm border border-gray-100 flex flex-col justify-between h-36">
+                <p class="text-[11px] text-gray-500 font-semibold tracking-wide uppercase">Dokumen Dibuat</p>
+                <div class="mt-auto">
+                    <h3 class="text-4xl text-btsblue font-semibold mb-1">0</h3>
+                    <p class="text-xs text-gray-400">sertifikat + suket</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bagian Bawah: Tabel Verifikasi & Sebaran Provinsi -->
+        <div class="grid grid-cols-12 gap-6">
+            
+            <!-- Tabel Perlu Verifikasi Gelar (Kiri, lebih lebar) -->
+            <div class="col-span-7 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col">
+                <!-- Header Tabel -->
+                <div class="p-5 border-b border-gray-100 flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-regular fa-triangle-exclamation text-gray-400"></i>
+                        <h3 class="font-semibold text-gray-800 text-[15px]">Perlu Verifikasi Gelar</h3>
+                    </div>
+                    <span class="bg-[#fef3c7] text-[#92400e] text-xs font-semibold px-3 py-1 rounded-full shadow-sm">4 peserta</span>
+                </div>
+                
+                <!-- Nama Kolom -->
+                <div class="grid grid-cols-12 gap-4 px-5 py-3 border-b border-gray-100 text-[11px] text-gray-400 font-bold tracking-wider uppercase">
+                    <div class="col-span-5">NAMA</div>
+                    <div class="col-span-4">MASALAH</div>
+                    <div class="col-span-3 text-right"></div>
+                </div>
+
+                <!-- Baris 1 -->
+                <div class="grid grid-cols-12 gap-4 px-5 py-4 border-b border-gray-50 items-center hover:bg-gray-50 transition-colors">
+                    <div class="col-span-5 font-medium text-[13px] text-gray-800 leading-snug">
+                        Dhanny<br>Rama Mahi
+                    </div>
+                    <div class="col-span-4">
+                        <div class="bg-[#fef9c3] text-[#a16207] text-[11px] font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-2">
+                            S.t. <i class="fas fa-arrow-right text-[9px] text-yellow-600"></i> S.T.
+                        </div>
+                    </div>
+                    <div class="col-span-3 text-right">
+                        <button class="border border-gray-200 text-gray-600 px-4 py-1.5 rounded-lg text-xs hover:bg-gray-100 hover:text-gray-800 font-medium transition-colors shadow-sm">
+                            Perbaiki
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Baris 2 -->
+                <div class="grid grid-cols-12 gap-4 px-5 py-4 items-center hover:bg-gray-50 transition-colors">
+                    <div class="col-span-5 font-medium text-[13px] text-gray-800 leading-snug">
+                        Dian<br>Widyanti
+                    </div>
+                    <div class="col-span-4">
+                        <div class="bg-[#fef9c3] text-[#a16207] text-[11px] font-semibold px-3 py-1.5 rounded-lg inline-flex items-center gap-2">
+                            s.T. <i class="fas fa-arrow-right text-[9px] text-yellow-600"></i> S.T.
+                        </div>
+                    </div>
+                    <div class="col-span-3 text-right">
+                        <button class="border border-gray-200 text-gray-600 px-4 py-1.5 rounded-lg text-xs hover:bg-gray-100 hover:text-gray-800 font-medium transition-colors shadow-sm">
+                            Perbaiki
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Spacer untuk estetika -->
+                <div class="flex-1"></div>
+                <div class="p-3 border-t border-gray-50 text-center">
+                    <button class="text-xs text-gray-400 hover:text-btsblue font-medium"><i class="fas fa-chevron-down mr-1"></i> Tampilkan lainnya</button>
+                </div>
+            </div>
+
+            <!-- Card Sebaran Provinsi (Kanan) -->
+            <div class="col-span-5 bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                <div class="p-5 border-b border-gray-100 flex items-center gap-3">
+                    <i class="fa-solid fa-location-dot text-btsblue text-opacity-70"></i>
+                    <h3 class="font-semibold text-gray-800 text-[15px]">Sebaran Provinsi</h3>
+                </div>
+                
+                <div class="p-5 space-y-4">
+                    <!-- Progress Jatim -->
+                    <div>
+                        <div class="flex justify-between text-[13px] mb-1.5">
+                            <span class="font-medium text-gray-700">Jawa Timur</span>
+                            <span class="font-bold text-gray-800">8</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-[#2c5282] h-full rounded-full" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress Jateng -->
+                    <div>
+                        <div class="flex justify-between text-[13px] mb-1.5">
+                            <span class="font-medium text-gray-700">Jawa Tengah</span>
+                            <span class="font-bold text-gray-800">4</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-[#2c5282] h-full rounded-full" style="width: 20%"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress Sumsel -->
+                    <div>
+                        <div class="flex justify-between text-[13px] mb-1.5">
+                            <span class="font-medium text-gray-700">Sumatera Selatan</span>
+                            <span class="font-bold text-gray-800">2</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-[#2c5282] h-full rounded-full" style="width: 10%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Jabar -->
+                    <div>
+                        <div class="flex justify-between text-[13px] mb-1.5">
+                            <span class="font-medium text-gray-700">Jawa Barat</span>
+                            <span class="font-bold text-gray-800">2</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-[#2c5282] h-full rounded-full" style="width: 10%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Progress Kalsel -->
+                    <div>
+                        <div class="flex justify-between text-[13px] mb-1.5">
+                            <span class="font-medium text-gray-700">Kalimantan Selatan</span>
+                            <span class="font-bold text-gray-800">2</span>
+                        </div>
+                        <div class="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                            <div class="bg-[#2c5282] h-full rounded-full" style="width: 10%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
